@@ -1,0 +1,8 @@
+# Script to obtain all pipelines from specific project from specific organization
+$org = "organization"
+$project = "project_name"
+$pat = "pat"
+
+$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$($pat)"))
+
+$apuUrl ="https://dev.azure.com/$organization/$project/_apis/pipelines?api-version=6.0"
